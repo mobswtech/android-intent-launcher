@@ -40,45 +40,53 @@
 
 <h2>Android Intent Launcher</h2>
 
-<!-- Chrome -->
+<!-- Chrome (intent for Chrome users) -->
 <a class="btn"
    href="intent://www.google.com#Intent;
    scheme=https;
    package=com.android.chrome;
    S.browser_fallback_url=https://www.google.com;
    end">
-   🌐 Open Google in Chrome
+   🌐 Open Google in Chrome (Chrome only)
 </a>
 
-<!-- Settings -->
-<a class="btn"
-   href="intent://settings#Intent;
-   action=android.settings.SETTINGS;
-   end">
-   ⚙️ Open Android Settings
+<!-- Chrome fallback -->
+<a class="btn" href="https://play.google.com/store/apps/details?id=com.android.chrome" target="_blank">
+  🌐 Install or Open Chrome (Play Store)
 </a>
 
-<!-- YouTube -->
+<!-- YouTube (intent for Chrome users) -->
 <a class="btn"
    href="intent://www.youtube.com#Intent;
    scheme=https;
    package=com.google.android.youtube;
    S.browser_fallback_url=https://www.youtube.com;
    end">
-   ▶️ Open YouTube App
+   ▶️ Open YouTube App (Chrome only)
 </a>
 
-<!-- Fallbacks -->
-<a class="btn" href="https://play.google.com/store/apps/details?id=com.android.chrome" target="_blank">
-  Open Chrome (via Play Store)
+<!-- YouTube fallback -->
+<a class="btn" href="https://www.youtube.com" target="_blank">
+  ▶️ Open YouTube in Browser
 </a>
 
+<a class="btn" href="https://play.google.com/store/apps/details?id=com.google.android.youtube" target="_blank">
+  ▶️ Install or Open YouTube (Play Store)
+</a>
+
+<!-- File Manager (Files by Google) -->
 <a class="btn" href="https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files" target="_blank">
-  Open File Manager (Files by Google)
+  📁 Open File Manager (Files by Google)
 </a>
 
-<a class="btn" href="https://play.google.com/store/apps/details?id=com.android.settings" target="_blank">
-  Open Settings (fallback only)
+<!-- Settings (not supported in browser, shown for reference) -->
+<a class="btn" onclick="alert('⚠️ Cannot open Android Settings from browser. This requires a native app.')">
+  ⚙️ Open Android Settings (Not supported in browser)
+</a>
+
+<!-- Screen Lock (not supported in browser) -->
+<a class="btn" onclick="alert('⚠️ Cannot launch screen lock setup from browser. Use a native app.')">
+  🔒 Set Screen Lock (Not supported in browser)
 </a>
 
 </body>
