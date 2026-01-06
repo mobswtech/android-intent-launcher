@@ -1,58 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Android Intent Launcher</title>
+  <meta charset="UTF-8">
+  <title>Android App Launcher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
-      font-family: sans-serif;
-      padding: 2em;
-      background: #f4f4f4;
+      font-family: system-ui, Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
     }
-    h1 {
-      color: #333;
-    }
-    a.intent-link {
+    .btn {
       display: block;
-      margin: 1em 0;
-      padding: 1em;
-      background: #fff;
-      border: 1px solid #ccc;
+      padding: 16px;
+      margin: 12px 0;
+      background: white;
+      border-radius: 10px;
       text-decoration: none;
-      color: #007bff;
-      border-radius: 5px;
+      color: #000;
+      font-size: 18px;
+      box-shadow: 0 2px 5px rgba(0,0,0,.15);
     }
-    a.intent-link:hover {
-      background: #e6f0ff;
+    .disabled {
+      color: red;
+      font-weight: bold;
     }
   </style>
+
+  <script>
+    if (!/Android/i.test(navigator.userAgent)) {
+      document.body.innerHTML =
+        "<p class='disabled'>❌ This page only works on Android devices.</p>";
+    }
+  </script>
 </head>
+
 <body>
-  <h1>Launch Android Apps via Intent</h1>
 
-  <a class="intent-link" href="intent://#Intent;scheme=http;package=com.android.chrome;end">
-    Open Chrome
-  </a>
+<h2>Android Intent Launcher</h2>
 
-  <a class="intent-link" href="intent://settings#Intent;action=android.settings.SETTINGS;end">
-    Open Settings
-  </a>
-
-  <a class="intent-link" href="intent://#Intent;action=android.intent.action.VIEW;type=vnd.android.document/directory;end">
-    Open File Manager
-  </a>
-
-  <a class="intent-link" href="intent://www.youtube.com#Intent;package=com.google.android.youtube;scheme=https;end">
-    Open YouTube
-  </a>
-
-  <a href="intent://#Intent;action=android.app.action.SET_NEW_PASSWORD;end">
-  Set Screen Lock
+<!-- Chrome -->
+<a class="btn"
+   href="intent://www.google.com#Intent;
+   scheme=https;
+   package=com.android.chrome;
+   S.browser_fallback_url=https://www.google.com;
+   end">
+   🌐 Open Google in Chrome
 </a>
 
-  <a href="intent://#Intent;action=android.settings.SECURITY_SETTINGS;end">
-  Open Security Settings
+<!-- Settings -->
+<a class="btn"
+   href="intent://settings#Intent;
+   action=android.settings.SETTINGS;
+   end">
+   ⚙️ Open Android Settings
 </a>
+
+<!-- YouTube -->
+<a class="btn"
+   href="intent://www.youtube.com#Intent;
+   scheme=https;
+   package=com.google.android.youtube;
+   S.browser_fallback_url=https://www.youtube.com;
+   end">
+   ▶️ Open YouTube App
+</a>
+
+<!-- Fallbacks -->
+<a class="btn" href="https://play.google.com/store/apps/details?id=com.android.chrome" target="_blank">
+  Open Chrome (via Play Store)
+</a>
+
+<a class="btn" href="https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files" target="_blank">
+  Open File Manager (Files by Google)
+</a>
+
+<a class="btn" href="https://play.google.com/store/apps/details?id=com.android.settings" target="_blank">
+  Open Settings (fallback only)
+</a>
+
 </body>
 </html>
