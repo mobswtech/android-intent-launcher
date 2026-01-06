@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Android Intent Launcher</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      background: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    a.intent-link {
+      display: block;
+      margin: 1em 0;
+      padding: 1em;
+      background: #fff;
+      border: 1px solid #ccc;
+      text-decoration: none;
+      color: #007bff;
+      border-radius: 5px;
+    }
+    a.intent-link:hover {
+      background: #e6f0ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Launch Android Apps via Intent</h1>
+
+  <a class="intent-link" href="intent://#Intent;scheme=http;package=com.android.chrome;end">
+    Open Chrome
+  </a>
+
+  <a class="intent-link" href="intent://settings#Intent;action=android.settings.SETTINGS;end">
+    Open Settings
+  </a>
+
+  <a class="intent-link" href="intent://#Intent;action=android.intent.action.VIEW;type=vnd.android.document/directory;end">
+    Open File Manager
+  </a>
+
+  <a class="intent-link" href="intent://www.youtube.com#Intent;package=com.google.android.youtube;scheme=https;end">
+    Open YouTube
+  </a>
+</body>
+</html>
